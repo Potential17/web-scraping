@@ -10,4 +10,4 @@ https://www.imdb.com/search/title/?release_date=2018-01-01,2019-10-31&sort=num_v
 
 ## Data scraped
 
-https://raw.githubusercontent.com/Potential17/web-scraping/master/Images/Data.png
+![](https://raw.githubusercontent.com/Potential17/web-scraping/master/Images/Data.png)
