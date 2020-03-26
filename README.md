@@ -1,4 +1,4 @@
-# web-scraping
+# Web-scraping
 
 Developed a python script to scrape data from imdb's website.
 
