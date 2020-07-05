@@ -1,3 +1,6 @@
+[![HitCount](http://hits.dwyl.com/{username}/https://githubcom/Potential17/web-scraping.svg)](http://hits.dwyl.com/{username}/https://githubcom/Potential17/web-scraping)
+
+
 # Web-scraping
 
 Developed a python script to scrape data from imdb's website.
