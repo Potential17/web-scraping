@@ -1,0 +1,27 @@
+body {
+  margin: 2%;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 2.5%;
+}
+
+.react-search-field {
+  width: 90%;
+  margin: auto 5%;
+  border-color: #1a1a1a !important;
+}
+
+.react-search-field-input {
+  padding: 0 0 0 1% !important;
+  color: #1a1a1a !important;
+}
+
+.react-search-field-button {
+  border-color: #1a1a1a !important;
+}
+
+.moviesList {
+  margin-top: 2.5%;
+}
