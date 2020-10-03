@@ -82,5 +82,7 @@ def scrapper(searchquery):
             for i in movies:
                 sql = "INSERT INTO table (name, year, imdb_ratings, metascores, movieVotes, movieNumbers, runtimes, genres) VALUES (%(name)s, %(year)s, %(imdb_ratings)s, %(metascores)s, %(movieVotes)s, %(movieNumbers)s, %(runtimes)s, %(genres)s);"
                 cur.execute(sql, i)
+    
+    return movies
 
 # test : scrapper('star wars')
