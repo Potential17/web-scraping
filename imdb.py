@@ -5,9 +5,7 @@ from bs4 import BeautifulSoup
 # import numpy as np
 import re
 import json
-
-
-
+import psycopg2
 
 
 
@@ -64,7 +62,7 @@ def scrapper(searchquery):
             pl = runtime.split(" ", 1)
             movie_data['runtimes']=pl[0]
             
-            #Genre
+            # Genre
             genre = container.p.find('span', class_ = 'genre').text.strip()
             ab = genre.split(",")
             movie_data['genres'] = ab
@@ -73,9 +71,16 @@ def scrapper(searchquery):
             # appending the scraped data to the list
             movies.append(movie_data)
 
-    return movies
+    # storing the scraped data in our database
+    with psycopg2.connect(host='localhost', database='yourdatabase', user='yourusername', password='yourpassword') as con:
+        with con.cursor() as cur:
+            
+            # check if a table exists, if not then we create a table to store our scraped data
+            cur.execute("CREATE TABLE IF NOT EXISTS table (name TEXT, year TEXT, imdb_ratings REAL, metascores TEXT, movieVotes TEXT, movieNumbers TEXT, runtimes TEXT, genres TEXT)")
+            
+            # iterating our movies list to store each movie in our database
+            for i in movies:
+                sql = "INSERT INTO table (name, year, imdb_ratings, metascores, movieVotes, movieNumbers, runtimes, genres) VALUES (%(name)s, %(year)s, %(imdb_ratings)s, %(metascores)s, %(movieVotes)s, %(movieNumbers)s, %(runtimes)s, %(genres)s);"
+                cur.execute(sql, i)
 
-
-
-
-
+# test : scrapper('star wars')
